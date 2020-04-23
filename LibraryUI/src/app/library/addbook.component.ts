@@ -5,7 +5,7 @@ import { Books } from './Books';
 import { Library } from './Library';
 
 @Component({
-  templateUrl:"./addbook.component.html"
+  templateUrl: "./addbook.component.html"
 })
 export class AddBookComponent {
   title: string = "Add Book";
@@ -13,14 +13,23 @@ export class AddBookComponent {
   show: boolean = true;
   errorMsg: string;
   bookname = new FormControl('');
-  libname = new FormControl('');
+  _libname: string = '';
+
+  get libname(): string {
+    return this._libname;
+  }
+
+  set libname(value: string) {
+    this._libname = value;
+  }
+
   libraries: Library[];
   constructor(private libraryService: LibraryService) {
     console.log(" Book List Component called");
   }
 
   ngOnInit() {
-    this.libraryService.getLibraries().subscribe(data => this.libraries=data);
+    this.libraryService.getLibraries().subscribe(data => this.libraries = data);
   }
 
 
@@ -28,9 +37,10 @@ export class AddBookComponent {
     const book: Books = {
       "bookId": 0,
       "bookName": this.bookname.value,
-      "libraryId": this.libname.value
+      "libraryId": +this._libname
     };
-    console.log("printing this " + this.libraryService.addBooks(book).subscribe({
+
+    this.libraryService.addorUpdateBooks(book).subscribe({
       next: response => {
         console.log("this.response body " + response.message);
         if (response.message == 'success') {
@@ -40,7 +50,7 @@ export class AddBookComponent {
 
       },
       error: err => this.errorMsg = err
-    }));
+    });
   }
 
 

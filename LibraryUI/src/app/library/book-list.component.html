@@ -12,7 +12,7 @@
       <tr *ngFor="let book of books">
         <td><b>{{book.bookName}}</b></td>
         <td><b>{{book.bookId}}</b></td>
-        <td><b>{{book.libraryName}}</b></td>
+        <td><b>{{book.libraryId}}</b></td>
         <td><button class="btn btn-primary" [routerLink]="['/update', book.bookId]">Update</button></td>
       </tr>
     </tbody>
