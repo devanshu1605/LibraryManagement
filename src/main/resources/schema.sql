@@ -20,6 +20,8 @@ CREATE TABLE Book(
 ALTER TABLE Book
     ADD FOREIGN KEY (library_id) 
     REFERENCES Library(library_id);
+  
+
 
 
 
