@@ -31,7 +31,6 @@ public class LibraryController {
 		if(((List<Library>)repository.findAll()).isEmpty()) {
 			Library lib = new Library();
 			lib.setLibraryName("Library 1");
-			lib.setLibraryId(1000);
 			repository.save(lib);
 		}
 		return (List<Library>)repository.findAll();
@@ -59,7 +58,6 @@ public class LibraryController {
 	     }
 	      
 	      final Book updatedorCreatedBook = bookrepository.save(book);
-	      System.out.println("updated book "+updatedorCreatedBook.toString());
 	      if(null!=updatedorCreatedBook) {
 	    	  body.setMessage("success");
 	      }
