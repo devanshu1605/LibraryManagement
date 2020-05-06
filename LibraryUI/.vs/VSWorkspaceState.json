@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
-    "",
     "\\src",
     "\\src\\app",
     "\\src\\app\\library"
   ],
-  "SelectedNode": "\\src\\app\\library\\update.component.html",
   "PreviewInSolutionExplorer": false
 }

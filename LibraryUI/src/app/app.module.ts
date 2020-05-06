@@ -5,12 +5,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BookListComponent } from './library/book-list.component';
+import { BookListComponent } from './library/book-list/book-list.component';
 import { LibraryComponent } from './library/library.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { UpdateBookComponent } from './library/update.component';
-import { AddBookComponent } from './library/addbook.component';
+import { UpdateBookComponent } from './library/update-book/update.component';
+import { AddBookComponent } from './library/add-book/addbook.component';
 
 @NgModule({
   declarations: [

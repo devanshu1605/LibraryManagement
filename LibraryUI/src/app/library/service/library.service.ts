@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpResponse, HttpHeaders } from '@angular/common/http';
-import { Library } from './Library';
-import { Books } from './Books';
+import { Library } from '../model/Library';
+import { Books } from '../model/Books';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
-import { SuccessComponent } from './SuccessResponse';
+import { SuccessComponent } from '../model/SuccessResponse';
 
 @Injectable({
   providedIn: 'root'

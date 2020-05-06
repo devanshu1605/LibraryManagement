@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, NgForm } from '@angular/forms';
-import { LibraryService } from './library.service';
+import { LibraryService } from '../service/library.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Books } from './Books';
+import { Books } from '../model/Books';
 import { HttpHeaders } from '@angular/common/http';
 
 @Component({
@@ -33,7 +33,7 @@ export class UpdateBookComponent implements OnInit{
       "bookName": this.bookname.value,
       "libraryId": 0
     };
-   console.log("printing this "+this.libraryService.updateBooks(book).subscribe({
+    console.log("printing this " + this.libraryService.addorUpdateBooks(book).subscribe({
      next: response => {
        console.log("this.response body " + response.message);
        if (response.message=='success') {

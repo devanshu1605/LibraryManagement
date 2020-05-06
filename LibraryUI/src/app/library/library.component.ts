@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Library } from './Library';
-import { LibraryService } from './library.service';
+import { Library } from './model/Library';
+import { LibraryService } from './service/library.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Component({

@@ -10,12 +10,16 @@
       Book Name:
     </label>
     <input type="text" [formControl]="bookname" />
+    <div *ngIf="showError" style="color:red; padding-left:20px;">
+      {{error}}
+    </div>
   </div>
   <div class="form-group">
     <label style="margin-right: 48px">
       Library Id:
     </label>
-    <select [formControl]="libname">
+    <select  [formControl]="libname">
+      <option>Select Library</option>
       <option *ngFor="let lib of libraries">{{lib.libraryId}}</option>
     </select>
   </div>
