@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { BookListComponent } from './library/book-list/book-list.component';
 import { LibraryComponent } from './library/library.component';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { UpdateBookComponent } from './library/update-book/update.component';
 import { AddBookComponent } from './library/add-book/addbook.component';
 
@@ -26,6 +26,7 @@ import { AddBookComponent } from './library/add-book/addbook.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HttpClient,
     RouterModule.forRoot([
       { path: 'home', component: LibraryComponent },
       { path: 'library', component: LibraryComponent },
